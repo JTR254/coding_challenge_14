@@ -27,6 +27,20 @@
             event.stopPropagation()
             ticketContainer.removeChild(ticketCard);
         });
+
+        const editButton = document.createElement("button"); // Task 5; creates an edit button
+        editButton.setAttribute("class", "edit-btn");
+        editButton.textContent = "Edit"; // puts the word edit in the button
+        editButton.addEventListener("click", () => {
+            editTicket(ticketCard, heading, paragraph, priorityLabel);
+        });
+
+        const saveButton = document.createElement("button"); // Task 5; creates a save button
+        saveButton.textContent = "Save"; // puts the word save in the button
+        saveButton.addEventListener("click", () => {
+        saveTicket(ticketCard, heading, paragraph, priorityLabel);
+        });
+
     
         ticketCard.appendChild(heading); // adds the child element (heading) to the parent element (ticketCard)
         ticketCard.appendChild(paragraph); // adds the child element (paragraph) to the parent element (ticketCard)
@@ -34,6 +48,12 @@
         ticketCard.appendChild(document.createElement("br")); // adds a line break
         ticketCard.appendChild(document.createElement("br")); // adds a line break
         ticketCard.appendChild(resolveButton); // adds the child element (removeButton) to the parent element (ticketCard)
+        ticketCard.appendChild(document.createElement("br")); // adds a line break
+        ticketCard.appendChild(document.createElement("br")); // adds a line break
+        ticketCard.appendChild(editButton); // adds the edit button
+        ticketCard.appendChild(document.createElement("br")); // adds a line break
+        ticketCard.appendChild(document.createElement("br")); // adds a line break
+        ticketCard.appendChild(saveButton); // adds the save button
 
         ticketContainer.appendChild(ticketCard); // adds the child element (ticketCard) to the parent element (ticketContainer)
 
@@ -61,3 +81,7 @@ addTicket("Magic Johnson", "Computer Virus", "High"); // adds pre-existing ticke
 ticketContainer.addEventListener("click", () => {
     console.log("Ticket card was clicked!"); // when ticket container is clicked in, a message pops up in the console
 });
+
+// Task 5 - Inline Editing for Support Tickets
+
+// added above
