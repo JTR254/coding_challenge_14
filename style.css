@@ -15,7 +15,7 @@ body {
 #ticketContainer {
     border: 1px solid #330450;
     padding: 20px;
-    min-height: 200px;
+    min-height: 300px;
 }
 
 .ticket-card {
