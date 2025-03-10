@@ -23,7 +23,8 @@
         const resolveButton = document.createElement("button"); // creates resolve button to remove the ticket card
         resolveButton.setAttribute ("class", "remove-btn");
         resolveButton.textContent = "Resolve"; // puts the word "resolve" inside the button
-        resolveButton.addEventListener("click", () => { // function so when resolve is clicked, the card disappears.
+        resolveButton.addEventListener("click", (event) => { // function so when resolve is clicked, the card disappears.
+            event.stopPropagation()
             ticketContainer.removeChild(ticketCard);
         });
     
@@ -54,3 +55,9 @@ function highlightHighPriorityTickets() {
 
 addTicket("Steve Kerr", "System Reboot", "Low"); // adds pre-existing ticket
 addTicket("Magic Johnson", "Computer Virus", "High"); // adds pre-existing ticket
+
+// Task 4 - Support Ticket Resolution with Event Bubbling
+
+ticketContainer.addEventListener("click", () => {
+    console.log("Ticket card was clicked!"); // when ticket container is clicked in, a message pops up in the console
+});
